@@ -56,3 +56,40 @@ C -- Real-time Updates --> D
 E -- Product Data --> B
 
 ```
+
+## Schema Diagram
+```mermaid
+classDiagram
+    class Auction{
+      +String auction_id
+      +String product_id
+      +DateTime start_time
+      +DateTime end_time
+      +Decimal start_price
+      +Decimal current_price
+      +String status
+      +String winning_bid_id
+    }
+    class Bid{
+      +String bid_id
+      +String auction_id
+      +String user_id
+      +Decimal bid_amount
+      +DateTime bid_time
+    }
+    class User{
+      +String user_id
+      +String username
+      +String password
+    }
+    class Product{
+      +String product_id
+      +String name
+      +String description
+      +Decimal price
+    }
+    User "1" -- "0..*" Bid : places
+    Auction "1" -- "0..*" Bid : has
+    Auction "1" -- "1" Product : relates to
+
+```
