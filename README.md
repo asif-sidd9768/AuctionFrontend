@@ -21,6 +21,16 @@ graph LR
 ```
 
 ## Detailed architecture
+This diagram represents the following:
+
+    The frontend communicates with the Main Backend for user authentication and fetching auctions.
+    The frontend communicates with the Auction Microservice for fetching specific auction details and placing a bid.
+    The frontend receives real-time updates from the Firebase Realtime Database.
+    The Main Backend communicates with the Auction Microservice to create an auction.
+    The Main Backend uses user services data from the Main Database.
+    The Main Backend sends real-time updates to the Firebase Realtime Database.
+    The Auction Microservice sends auction data to the Main Database and real-time updates to the Firebase Realtime Database.
+    The Main Database sends product data to the Main Backend.
 
 ```mermaid
 graph LR
