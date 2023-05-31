@@ -1,5 +1,6 @@
 # AuctionFrontend
 
+## Flow Diagram
 ```mermaid
 graph LR
   Frontend-->|User services|Main_Backend
@@ -8,3 +9,11 @@ graph LR
   Auction_Microservice-->|Real-time updates|Firebase_Realtime_Database
 
 ```
+## Architecture
+
+graph LR
+  Frontend-->|Authentication|User_Service
+  Frontend-->|Real-time updates|Firebase_Realtime_Database
+  Auction_Service-->|Auction and Bid data|Main_Database
+  Auction_Service-->|Real-time updates|Firebase_Realtime_Database
+  Scheduler-->|Starting and ending auctions|Auction_Service
