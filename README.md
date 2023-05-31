@@ -20,7 +20,7 @@ graph LR
   Scheduler-->|Starting and ending auctions|Auction_Service
 ```
 
-## new
+## Detailed architecture
 
 ```mermaid
 graph LR
